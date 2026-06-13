@@ -1,0 +1,1776 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Urban Bliss Hotel - Premium luxury accommodation, dining, conferencing and wellness in Kabwe, Zambia. Book your stay today.">
+<title>Urban Bliss Hotel | Kabwe, Zambia</title>
+
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&family=Cinzel:wght@400;600&display=swap" rel="stylesheet">
+<!-- Bootstrap 5 -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<!-- Font Awesome 6 -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+<!-- Swiper -->
+<link href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" rel="stylesheet">
+<!-- AOS -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+<style>
+:root {
+  --green: #57B74C;
+  --green-dark: #3f8a37;
+  --green-light: #e8f5e6;
+  --charcoal: #5A5B5C;
+  --charcoal-dark: #3a3b3c;
+  --white: #ffffff;
+  --off-white: #F8F9FA;
+  --bg-soft: #F5F7F5;
+  --gold: #c9a84c;
+  --text-dark: #1a1a1a;
+  --text-mid: #4a4a4a;
+  --text-light: #888;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Inter', sans-serif;
+  color: var(--text-dark);
+  overflow-x: hidden;
+}
+
+/* ─── TYPOGRAPHY ─────────────────────────────────── */
+.display-serif {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 300;
+  letter-spacing: 0.02em;
+}
+.cinzel { font-family: 'Cinzel', serif; }
+h1,h2,h3,h4 { font-family: 'Cormorant Garamond', serif; }
+
+.section-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--green);
+  display: block;
+  margin-bottom: 0.75rem;
+}
+
+.section-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 300;
+  line-height: 1.2;
+  color: var(--text-dark);
+}
+
+.section-title em {
+  font-style: italic;
+  color: var(--green);
+}
+
+/* ─── TOP BAR ────────────────────────────────────── */
+#topbar {
+  background: var(--charcoal-dark);
+  color: #ccc;
+  font-size: 0.78rem;
+  padding: 8px 0;
+}
+#topbar a { color: #ccc; text-decoration: none; transition: color 0.2s; }
+#topbar a:hover { color: var(--green); }
+#topbar .sep { margin: 0 12px; opacity: 0.3; }
+
+/* ─── NAVBAR ─────────────────────────────────────── */
+#mainNav {
+  background: rgba(255,255,255,0.96);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(87,183,76,0.12);
+  transition: all 0.3s ease;
+  padding: 12px 0;
+}
+#mainNav.scrolled {
+  box-shadow: 0 4px 30px rgba(0,0,0,0.1);
+}
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.3rem;
+  color: var(--charcoal-dark) !important;
+  font-weight: 600;
+}
+.navbar-brand span { color: var(--green); }
+.nav-link {
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--charcoal) !important;
+  padding: 6px 14px !important;
+  transition: color 0.2s;
+}
+.nav-link:hover { color: var(--green) !important; }
+.btn-book-nav {
+  background: var(--green);
+  color: white !important;
+  border-radius: 0;
+  padding: 8px 22px !important;
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  transition: background 0.3s;
+}
+.btn-book-nav:hover { background: var(--green-dark); color: white !important; }
+
+/* ─── HERO ───────────────────────────────────────── */
+#hero {
+  height: 100vh;
+  min-height: 700px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #0a1f0a 0%, #1a3a1a 40%, #2d5c2d 100%);
+  z-index: 0;
+}
+.hero-pattern {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    radial-gradient(ellipse at 20% 50%, rgba(87,183,76,0.15) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 20%, rgba(201,168,76,0.1) 0%, transparent 50%);
+  z-index: 1;
+}
+.hero-img {
+  position: absolute;
+  inset: 0;
+  background: url('https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=1800&q=80') center/cover no-repeat;
+  opacity: 0.35;
+  z-index: 2;
+}
+.hero-content {
+  position: relative;
+  z-index: 10;
+  color: white;
+}
+.hero-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.3em;
+  color: var(--green);
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 1.5rem;
+}
+.hero-eyebrow::before, .hero-eyebrow::after {
+  content: '';
+  width: 40px;
+  height: 1px;
+  background: var(--green);
+  opacity: 0.6;
+}
+.hero-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.8rem, 6vw, 5.5rem);
+  font-weight: 300;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+}
+.hero-title em {
+  font-style: italic;
+  color: var(--green);
+}
+.hero-sub {
+  font-size: 1rem;
+  font-weight: 300;
+  color: rgba(255,255,255,0.8);
+  max-width: 540px;
+  line-height: 1.8;
+  margin-bottom: 2.5rem;
+}
+.btn-primary-green {
+  background: var(--green);
+  color: white;
+  border: none;
+  padding: 14px 36px;
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.3s;
+  border-radius: 0;
+}
+.btn-primary-green:hover { background: var(--green-dark); color: white; transform: translateY(-2px); }
+.btn-outline-white {
+  background: transparent;
+  color: white;
+  border: 1px solid rgba(255,255,255,0.5);
+  padding: 14px 36px;
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.3s;
+}
+.btn-outline-white:hover { border-color: white; color: white; background: rgba(255,255,255,0.08); }
+
+.hero-features {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(255,255,255,0.06);
+  backdrop-filter: blur(20px);
+  border-top: 1px solid rgba(255,255,255,0.1);
+  z-index: 10;
+  padding: 20px 0;
+}
+.hero-feature-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: white;
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+  justify-content: center;
+}
+.hero-feature-item i { color: var(--green); font-size: 1.1rem; }
+
+/* ─── BOOKING BAR ────────────────────────────────── */
+#bookingBar {
+  background: var(--white);
+  box-shadow: 0 8px 40px rgba(0,0,0,0.12);
+  padding: 0;
+  position: relative;
+  z-index: 100;
+  margin-top: -1px;
+}
+.booking-bar-inner {
+  display: flex;
+  align-items: stretch;
+}
+.booking-field {
+  flex: 1;
+  padding: 20px 24px;
+  border-right: 1px solid #eee;
+}
+.booking-field label {
+  font-family: 'Cinzel', serif;
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--green);
+  display: block;
+  margin-bottom: 4px;
+}
+.booking-field input, .booking-field select {
+  border: none;
+  outline: none;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem;
+  color: var(--text-dark);
+  width: 100%;
+  background: transparent;
+  cursor: pointer;
+}
+.booking-submit {
+  background: var(--green);
+  color: white;
+  border: none;
+  padding: 0 40px;
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  cursor: pointer;
+  transition: background 0.3s;
+  white-space: nowrap;
+}
+.booking-submit:hover { background: var(--green-dark); }
+.booking-submit i { margin-right: 8px; }
+
+/* ─── SECTIONS ───────────────────────────────────── */
+section { padding: 90px 0; }
+.section-divider {
+  width: 60px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--green), transparent);
+  margin: 20px 0 30px;
+}
+
+/* ─── ABOUT ──────────────────────────────────────── */
+#about { background: var(--bg-soft); }
+.about-img-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 200px 200px;
+  gap: 12px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+.about-img-grid img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+.about-img-grid img:first-child { grid-row: span 2; }
+.about-img-grid img:hover { transform: scale(1.04); }
+.about-img-wrap { overflow: hidden; }
+
+.stat-item {
+  text-align: center;
+  padding: 28px 20px;
+  background: white;
+  border-bottom: 3px solid var(--green);
+}
+.stat-number {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.8rem;
+  font-weight: 300;
+  color: var(--green);
+  line-height: 1;
+}
+.stat-label {
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-mid);
+  margin-top: 4px;
+}
+
+/* ─── ROOMS ──────────────────────────────────────── */
+#rooms { background: var(--white); }
+.room-card {
+  background: white;
+  overflow: hidden;
+  box-shadow: 0 4px 30px rgba(0,0,0,0.08);
+  transition: all 0.4s;
+  height: 100%;
+  border: 1px solid #f0f0f0;
+}
+.room-card:hover { transform: translateY(-8px); box-shadow: 0 20px 60px rgba(0,0,0,0.15); }
+.room-img-wrap {
+  overflow: hidden;
+  height: 240px;
+  position: relative;
+}
+.room-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s;
+}
+.room-card:hover .room-img-wrap img { transform: scale(1.08); }
+.room-badge {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  background: var(--green);
+  color: white;
+  font-family: 'Cinzel', serif;
+  font-size: 0.6rem;
+  letter-spacing: 0.12em;
+  padding: 5px 12px;
+  text-transform: uppercase;
+}
+.room-body { padding: 28px; }
+.room-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.6rem;
+  font-weight: 300;
+  margin-bottom: 12px;
+}
+.room-feature {
+  font-size: 0.78rem;
+  color: var(--text-mid);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+.room-feature i { color: var(--green); width: 14px; }
+.room-price {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.4rem;
+  color: var(--green);
+  margin-top: 16px;
+}
+.room-price small {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.72rem;
+  color: var(--text-light);
+  font-weight: 400;
+}
+.btn-room {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  background: transparent;
+  border: 1px solid var(--green);
+  color: var(--green);
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  text-align: center;
+  text-decoration: none;
+  margin-top: 20px;
+  transition: all 0.3s;
+}
+.btn-room:hover { background: var(--green); color: white; }
+
+/* ─── AMENITIES ──────────────────────────────────── */
+#amenities { background: var(--bg-soft); }
+.amenity-card {
+  background: white;
+  padding: 36px 24px;
+  text-align: center;
+  border-bottom: 3px solid transparent;
+  transition: all 0.35s;
+  height: 100%;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.05);
+}
+.amenity-card:hover {
+  border-bottom-color: var(--green);
+  transform: translateY(-6px);
+  box-shadow: 0 12px 40px rgba(87,183,76,0.15);
+}
+.amenity-icon {
+  width: 64px;
+  height: 64px;
+  background: var(--green-light);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 18px;
+  transition: all 0.3s;
+}
+.amenity-card:hover .amenity-icon {
+  background: var(--green);
+}
+.amenity-icon i {
+  font-size: 1.4rem;
+  color: var(--green);
+  transition: color 0.3s;
+}
+.amenity-card:hover .amenity-icon i { color: white; }
+.amenity-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem;
+  font-weight: 400;
+}
+
+/* ─── CONFERENCES ────────────────────────────────── */
+#conferences {
+  background: var(--charcoal-dark);
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+#conferences::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url('https://images.unsplash.com/photo-1497366216548-37526070297c?w=1600&q=70') center/cover;
+  opacity: 0.12;
+}
+#conferences .section-title { color: white; }
+.conf-stat {
+  border-left: 3px solid var(--green);
+  padding: 16px 24px;
+  margin-bottom: 16px;
+}
+.conf-stat-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.2rem;
+  color: var(--green);
+  line-height: 1;
+}
+.conf-stat-label { font-size: 0.8rem; color: #aaa; margin-top: 2px; }
+.event-tag {
+  display: inline-block;
+  padding: 6px 16px;
+  border: 1px solid rgba(87,183,76,0.4);
+  color: rgba(255,255,255,0.8);
+  font-size: 0.76rem;
+  letter-spacing: 0.06em;
+  margin: 4px;
+  transition: all 0.3s;
+  cursor: default;
+}
+.event-tag:hover { background: var(--green); border-color: var(--green); color: white; }
+.btn-conf {
+  display: inline-block;
+  padding: 14px 36px;
+  background: transparent;
+  border: 1px solid var(--green);
+  color: var(--green);
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.15em;
+  text-decoration: none;
+  transition: all 0.3s;
+  margin-top: 24px;
+}
+.btn-conf:hover { background: var(--green); color: white; }
+
+/* ─── RESTAURANT ─────────────────────────────────── */
+#restaurant { background: var(--white); }
+.menu-item-card {
+  border: 1px solid #f0f0f0;
+  padding: 24px;
+  transition: all 0.3s;
+}
+.menu-item-card:hover {
+  border-color: var(--green);
+  box-shadow: 0 8px 30px rgba(87,183,76,0.1);
+}
+.menu-item-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.2rem;
+  margin-bottom: 4px;
+}
+.menu-item-desc { font-size: 0.82rem; color: var(--text-mid); }
+.menu-item-price { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; color: var(--green); font-weight: 300; }
+
+/* ─── WELLNESS ───────────────────────────────────── */
+#wellness { background: var(--bg-soft); }
+.wellness-card {
+  background: white;
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+  height: 100%;
+}
+.wellness-img {
+  height: 220px;
+  overflow: hidden;
+}
+.wellness-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+.wellness-card:hover .wellness-img img { transform: scale(1.05); }
+.wellness-body { padding: 28px; }
+.wellness-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.5rem;
+  font-weight: 300;
+  margin-bottom: 12px;
+}
+.wellness-item {
+  font-size: 0.82rem;
+  color: var(--text-mid);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+.wellness-item i { color: var(--green); }
+
+/* ─── TESTIMONIALS ───────────────────────────────── */
+#testimonials {
+  background: var(--charcoal-dark);
+  color: white;
+}
+#testimonials .section-title { color: white; }
+.testi-card {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
+  padding: 40px;
+  height: 100%;
+  position: relative;
+}
+.testi-card::before {
+  content: '\201C';
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 5rem;
+  color: var(--green);
+  opacity: 0.4;
+  position: absolute;
+  top: 10px;
+  left: 24px;
+  line-height: 1;
+}
+.testi-stars { color: #f4c430; margin-bottom: 16px; font-size: 0.9rem; }
+.testi-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.15rem;
+  font-style: italic;
+  color: rgba(255,255,255,0.85);
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+.testi-author {
+  font-family: 'Cinzel', serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  color: var(--green);
+}
+.rating-badge {
+  background: var(--green);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 28px;
+  margin-bottom: 40px;
+}
+.rating-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2rem;
+  color: white;
+  line-height: 1;
+}
+.rating-info { font-size: 0.75rem; color: rgba(255,255,255,0.85); }
+
+/* ─── GALLERY ────────────────────────────────────── */
+#gallery { background: var(--white); }
+.gallery-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 36px;
+}
+.filter-btn {
+  padding: 7px 20px;
+  border: 1px solid #ddd;
+  background: transparent;
+  font-family: 'Cinzel', serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s;
+  color: var(--charcoal);
+}
+.filter-btn.active, .filter-btn:hover {
+  background: var(--green);
+  border-color: var(--green);
+  color: white;
+}
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+.gallery-item {
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+}
+.gallery-item:nth-child(1) { grid-column: span 2; grid-row: span 2; }
+.gallery-item:nth-child(5) { grid-column: span 2; }
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  min-height: 200px;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+.gallery-item:hover img { transform: scale(1.08); }
+.gallery-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+}
+.gallery-item:hover .gallery-overlay { background: rgba(87,183,76,0.5); }
+.gallery-overlay i { color: white; font-size: 1.5rem; opacity: 0; transition: opacity 0.3s; }
+.gallery-item:hover .gallery-overlay i { opacity: 1; }
+
+/* ─── LOCATION ───────────────────────────────────── */
+#location { background: var(--bg-soft); }
+.location-card {
+  background: white;
+  padding: 36px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+  height: 100%;
+}
+.map-placeholder {
+  background: linear-gradient(135deg, #e8f5e6 0%, #d4edd1 100%);
+  border: 1px solid #c5e0c2;
+  height: 320px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  font-family: 'Cormorant Garamond', serif;
+  color: var(--charcoal);
+  font-size: 1.1rem;
+}
+.map-placeholder i { font-size: 3rem; color: var(--green); }
+.nearby-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+.nearby-item i { color: var(--green); width: 20px; }
+.nearby-dist { margin-left: auto; font-size: 0.78rem; color: var(--text-mid); }
+
+/* ─── CONTACT ────────────────────────────────────── */
+#contact { background: var(--white); }
+.contact-info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  margin-bottom: 32px;
+}
+.contact-icon {
+  width: 50px;
+  height: 50px;
+  background: var(--green-light);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.contact-icon i { color: var(--green); font-size: 1.1rem; }
+.contact-label {
+  font-family: 'Cinzel', serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--green);
+  display: block;
+  margin-bottom: 4px;
+}
+.contact-value { font-size: 0.95rem; color: var(--text-dark); }
+.contact-form .form-control {
+  border: 1px solid #e5e5e5;
+  border-radius: 0;
+  padding: 14px 18px;
+  font-size: 0.9rem;
+  transition: border-color 0.3s;
+}
+.contact-form .form-control:focus {
+  border-color: var(--green);
+  box-shadow: none;
+}
+.btn-contact {
+  background: var(--green);
+  color: white;
+  border: none;
+  padding: 14px 40px;
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.15em;
+  cursor: pointer;
+  transition: background 0.3s;
+  border-radius: 0;
+}
+.btn-contact:hover { background: var(--green-dark); }
+
+/* ─── FOOTER ─────────────────────────────────────── */
+#footer {
+  background: var(--charcoal-dark);
+  color: #aaa;
+  padding: 60px 0 0;
+}
+.footer-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.4rem;
+  color: white;
+  margin-bottom: 16px;
+  display: block;
+}
+.footer-brand span { color: var(--green); }
+.footer-about { font-size: 0.83rem; line-height: 1.8; margin-bottom: 24px; }
+.footer-title {
+  font-family: 'Cinzel', serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: white;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+.footer-link {
+  display: block;
+  color: #aaa;
+  text-decoration: none;
+  font-size: 0.83rem;
+  padding: 4px 0;
+  transition: color 0.2s;
+}
+.footer-link:hover { color: var(--green); }
+.footer-contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 12px;
+  font-size: 0.83rem;
+}
+.footer-contact-item i { color: var(--green); margin-top: 2px; }
+.newsletter-input {
+  display: flex;
+  gap: 0;
+}
+.newsletter-input input {
+  flex: 1;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-right: none;
+  color: white;
+  padding: 10px 14px;
+  font-size: 0.82rem;
+  outline: none;
+}
+.newsletter-input input::placeholder { color: #888; }
+.newsletter-input button {
+  background: var(--green);
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.newsletter-input button:hover { background: var(--green-dark); }
+.social-links { display: flex; gap: 10px; margin-top: 20px; }
+.social-link {
+  width: 36px;
+  height: 36px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #aaa;
+  text-decoration: none;
+  font-size: 0.85rem;
+  transition: all 0.3s;
+}
+.social-link:hover { background: var(--green); border-color: var(--green); color: white; }
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.06);
+  padding: 20px 0;
+  margin-top: 50px;
+  font-size: 0.78rem;
+  text-align: center;
+  color: #666;
+}
+
+/* ─── FLOATING BUTTONS ───────────────────────────── */
+.whatsapp-float {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 56px;
+  height: 56px;
+  background: #25D366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.4rem;
+  text-decoration: none;
+  z-index: 9999;
+  box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+  transition: all 0.3s;
+  animation: pulse-wa 2s infinite;
+}
+.whatsapp-float:hover { transform: scale(1.1); color: white; }
+@keyframes pulse-wa {
+  0%,100% { box-shadow: 0 4px 20px rgba(37,211,102,0.4); }
+  50% { box-shadow: 0 4px 30px rgba(37,211,102,0.7); }
+}
+
+/* ─── BACK TO TOP ────────────────────────────────── */
+#backTop {
+  position: fixed;
+  bottom: 96px;
+  right: 30px;
+  width: 44px;
+  height: 44px;
+  background: var(--green);
+  color: white;
+  border: none;
+  border-radius: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 9998;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.3s;
+}
+#backTop.show { opacity: 1; transform: translateY(0); }
+
+/* ─── LIGHTBOX ───────────────────────────────────── */
+.lightbox-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.92);
+  z-index: 99999;
+  align-items: center;
+  justify-content: center;
+}
+.lightbox-overlay.active { display: flex; }
+.lightbox-img {
+  max-width: 90vw;
+  max-height: 85vh;
+  object-fit: contain;
+}
+.lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 24px;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+/* ─── RESPONSIVE ─────────────────────────────────── */
+@media (max-width: 991px) {
+  .booking-bar-inner { flex-direction: column; }
+  .booking-field { border-right: none; border-bottom: 1px solid #eee; }
+  .booking-submit { padding: 16px; }
+  .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+  .gallery-item:nth-child(1) { grid-column: span 2; }
+  .gallery-item:nth-child(5) { grid-column: span 1; }
+  #topbar .d-md-block { display: none !important; }
+}
+@media (max-width: 767px) {
+  .gallery-grid { grid-template-columns: 1fr 1fr; }
+  .about-img-grid { grid-template-rows: 160px 160px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div id="topbar">
+  <div class="container">
+    <div class="d-flex justify-content-between align-items-center flex-wrap gap-2">
+      <div class="d-flex align-items-center flex-wrap gap-3">
+        <a href="tel:+260974041414"><i class="fa fa-phone me-1"></i>+260 974 041 414</a>
+        <span class="sep d-none d-md-inline">|</span>
+        <a href="mailto:info@urbanblisshotel.com" class="d-none d-md-block"><i class="fa fa-envelope me-1"></i>info@urbanblisshotel.com</a>
+        <span class="sep d-none d-md-inline">|</span>
+        <span class="d-none d-md-block"><i class="fa-solid fa-location-dot me-1"></i>Luangwa Avenue, Kabwe, Zambia</span>
+      </div>
+      <div class="d-flex align-items-center gap-3">
+        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://wa.me/260974041414" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg sticky-top" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand" href="#home">
+      Urban<span>Bliss</span>&nbsp;<span style="font-weight:300;font-size:0.9rem;color:#888;">Hotel</span>
+    </a>
+    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <i class="fa fa-bars" style="color:var(--green)"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto align-items-lg-center gap-1">
+        <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#rooms">Rooms</a></li>
+        <li class="nav-item"><a class="nav-link" href="#restaurant">Restaurant</a></li>
+        <li class="nav-item"><a class="nav-link" href="#conferences">Conferences</a></li>
+        <li class="nav-item"><a class="nav-link" href="#amenities">Amenities</a></li>
+        <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
+        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        <li class="nav-item ms-2"><a class="nav-link btn-book-nav" href="#booking"><i class="fa-solid fa-calendar-check me-1"></i>Book Now</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="home" style="padding:0">
+  <div id="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-pattern"></div>
+    <div class="hero-img"></div>
+    <div class="container hero-content">
+      <div class="row">
+        <div class="col-lg-8">
+          <div class="hero-eyebrow">Kabwe, Zambia &bull; Est. 2019</div>
+          <h1 class="hero-title">
+            Experience <em>Luxury</em><br>& Tranquility
+          </h1>
+          <p class="hero-sub">
+            Urban Bliss Hotel offers premium accommodation, exceptional dining, conference facilities, wellness experiences, and warm African hospitality in the heart of Zambia.
+          </p>
+          <div class="d-flex flex-wrap gap-3">
+            <a href="#booking" class="btn-primary-green"><i class="fa-solid fa-calendar-check me-2"></i>Book Your Stay</a>
+            <a href="#rooms" class="btn-outline-white">Explore Rooms</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Feature Strip -->
+    <div class="hero-features">
+      <div class="container">
+        <div class="row g-2 justify-content-center">
+          <div class="col-6 col-md-2"><div class="hero-feature-item"><i class="fa-solid fa-mug-hot"></i> Free Breakfast</div></div>
+          <div class="col-6 col-md-2"><div class="hero-feature-item"><i class="fa-solid fa-wifi"></i> Free Wi-Fi</div></div>
+          <div class="col-6 col-md-2"><div class="hero-feature-item"><i class="fa-solid fa-person-swimming"></i> Outdoor Pool</div></div>
+          <div class="col-6 col-md-2"><div class="hero-feature-item"><i class="fa-solid fa-spa"></i> Spa & Salon</div></div>
+          <div class="col-6 col-md-2"><div class="hero-feature-item"><i class="fa-solid fa-people-group"></i> Conference</div></div>
+          <div class="col-6 col-md-2"><div class="hero-feature-item"><i class="fa-solid fa-square-parking"></i> Free Parking</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BOOKING BAR -->
+<div id="booking">
+  <div class="container-fluid px-0">
+    <div class="booking-bar-inner">
+      <div class="booking-field">
+        <label><i class="fa fa-calendar me-1"></i> Check-in</label>
+        <input type="date" id="checkin">
+      </div>
+      <div class="booking-field">
+        <label><i class="fa fa-calendar me-1"></i> Check-out</label>
+        <input type="date" id="checkout">
+      </div>
+      <div class="booking-field">
+        <label><i class="fa fa-user me-1"></i> Guests</label>
+        <select>
+          <option>1 Guest</option>
+          <option>2 Guests</option>
+          <option>3 Guests</option>
+          <option>4 Guests</option>
+          <option>5+ Guests</option>
+        </select>
+      </div>
+      <div class="booking-field">
+        <label><i class="fa fa-bed me-1"></i> Room Type</label>
+        <select>
+          <option>Standard Room</option>
+          <option>Deluxe Suite</option>
+          <option>Executive Suite</option>
+          <option>Family Suite</option>
+          <option>Presidential Suite</option>
+        </select>
+      </div>
+      <button class="booking-submit" onclick="handleBooking()">
+        <i class="fa-solid fa-calendar-check"></i> Check Availability
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-5" data-aos="fade-right">
+        <div class="about-img-grid">
+          <div class="about-img-wrap">
+            <img src="https://images.unsplash.com/photo-1540541338537-1220059a08b0?w=600&q=80" alt="Hotel lobby">
+          </div>
+          <div class="about-img-wrap">
+            <img src="https://images.unsplash.com/photo-1566665797739-1674de7a421a?w=400&q=80" alt="Room">
+          </div>
+          <div class="about-img-wrap">
+            <img src="https://images.unsplash.com/photo-1445019980597-93fa8acb246c?w=400&q=80" alt="Pool">
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-7" data-aos="fade-left">
+        <span class="section-eyebrow">Our Story</span>
+        <h2 class="section-title">A True Definition of <em>Luxury</em></h2>
+        <div class="section-divider"></div>
+        <p class="text-mid" style="line-height:1.9;margin-bottom:24px;">
+          Urban Bliss Hotel was established in 2019 to reward a good life by providing guests with a unique hospitality experience. Located in Kabwe, Zambia, the hotel has become known as an oasis of peace and tranquility, combining luxury accommodation, excellent dining, wellness services, and exceptional customer care.
+        </p>
+        <p class="text-mid" style="line-height:1.9;margin-bottom:36px;">
+          We believe every guest deserves to feel cherished, relaxed, and inspired — and our dedicated team works tirelessly to ensure every stay exceeds expectation.
+        </p>
+        <div class="row g-3">
+          <div class="col-6 col-sm-4"><div class="stat-item"><div class="stat-number">822+</div><div class="stat-label">Guest Reviews</div></div></div>
+          <div class="col-6 col-sm-4"><div class="stat-item"><div class="stat-number">4.3</div><div class="stat-label">Google Rating</div></div></div>
+          <div class="col-6 col-sm-4"><div class="stat-item"><div class="stat-number">2019</div><div class="stat-label">Established</div></div></div>
+          <div class="col-6 col-sm-4"><div class="stat-item"><div class="stat-number">550</div><div class="stat-label">Conference Capacity</div></div></div>
+          <div class="col-6 col-sm-4"><div class="stat-item"><div class="stat-number">24/7</div><div class="stat-label">Fitness Centre</div></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ROOMS -->
+<section id="rooms">
+  <div class="container">
+    <div class="text-center mb-5" data-aos="fade-up">
+      <span class="section-eyebrow">Accommodations</span>
+      <h2 class="section-title">Luxury Rooms & <em>Suites</em></h2>
+      <div class="section-divider mx-auto"></div>
+    </div>
+    <div class="row g-4">
+      <!-- Standard -->
+      <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="0">
+        <div class="room-card">
+          <div class="room-img-wrap">
+            <img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=600&q=80" alt="Standard Room" loading="lazy">
+            <div class="room-badge">Standard</div>
+          </div>
+          <div class="room-body">
+            <div class="room-name">Standard Room</div>
+            <div class="room-feature"><i class="fa-solid fa-bed"></i> King or Twin Beds</div>
+            <div class="room-feature"><i class="fa-solid fa-wifi"></i> Free Wi-Fi</div>
+            <div class="room-feature"><i class="fa-solid fa-tv"></i> Smart TV</div>
+            <div class="room-feature"><i class="fa-solid fa-snowflake"></i> Air Conditioning</div>
+            <div class="room-feature"><i class="fa-solid fa-user"></i> Up to 2 Guests</div>
+            <div class="room-price">K 850 <small>/ night</small></div>
+            <a href="#booking" class="btn-room"><i class="fa-solid fa-calendar-check me-1"></i> Book Now</a>
+          </div>
+        </div>
+      </div>
+      <!-- Deluxe -->
+      <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+        <div class="room-card">
+          <div class="room-img-wrap">
+            <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?w=600&q=80" alt="Deluxe Suite" loading="lazy">
+            <div class="room-badge">Deluxe</div>
+          </div>
+          <div class="room-body">
+            <div class="room-name">Deluxe Suite</div>
+            <div class="room-feature"><i class="fa-solid fa-bed"></i> King Bed</div>
+            <div class="room-feature"><i class="fa-solid fa-martini-glass"></i> Mini Bar</div>
+            <div class="room-feature"><i class="fa-solid fa-mug-hot"></i> Tea & Coffee Station</div>
+            <div class="room-feature"><i class="fa-solid fa-lock"></i> In-Room Safe</div>
+            <div class="room-feature"><i class="fa-solid fa-user"></i> Up to 2 Guests</div>
+            <div class="room-price">K 1,250 <small>/ night</small></div>
+            <a href="#booking" class="btn-room"><i class="fa-solid fa-calendar-check me-1"></i> Book Now</a>
+          </div>
+        </div>
+      </div>
+      <!-- Executive -->
+      <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+        <div class="room-card">
+          <div class="room-img-wrap">
+            <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=600&q=80" alt="Executive Suite" loading="lazy">
+            <div class="room-badge" style="background:var(--gold)">Executive</div>
+          </div>
+          <div class="room-body">
+            <div class="room-name">Executive Suite</div>
+            <div class="room-feature"><i class="fa-solid fa-bed"></i> King Bed</div>
+            <div class="room-feature"><i class="fa-solid fa-briefcase"></i> Work Desk & Area</div>
+            <div class="room-feature"><i class="fa-solid fa-bath"></i> Luxury Bathroom</div>
+            <div class="room-feature"><i class="fa-solid fa-bell-concierge"></i> Room Service</div>
+            <div class="room-feature"><i class="fa-solid fa-user"></i> Up to 2 Guests</div>
+            <div class="room-price">K 1,800 <small>/ night</small></div>
+            <a href="#booking" class="btn-room"><i class="fa-solid fa-calendar-check me-1"></i> Book Now</a>
+          </div>
+        </div>
+      </div>
+      <!-- Presidential -->
+      <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+        <div class="room-card">
+          <div class="room-img-wrap">
+            <img src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=600&q=80" alt="Presidential Suite" loading="lazy">
+            <div class="room-badge" style="background:var(--charcoal-dark)">Presidential</div>
+          </div>
+          <div class="room-body">
+            <div class="room-name">Presidential Suite</div>
+            <div class="room-feature"><i class="fa-solid fa-bed"></i> King Bed</div>
+            <div class="room-feature"><i class="fa-solid fa-couch"></i> Private Lounge</div>
+            <div class="room-feature"><i class="fa-solid fa-utensils"></i> Dining Area</div>
+            <div class="room-feature"><i class="fa-solid fa-star"></i> Butler Service</div>
+            <div class="room-feature"><i class="fa-solid fa-user-group"></i> Up to 4 Guests</div>
+            <div class="room-price">K 3,500 <small>/ night</small></div>
+            <a href="#booking" class="btn-room"><i class="fa-solid fa-calendar-check me-1"></i> Book Now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AMENITIES -->
+<section id="amenities">
+  <div class="container">
+    <div class="text-center mb-5" data-aos="fade-up">
+      <span class="section-eyebrow">Facilities</span>
+      <h2 class="section-title">Everything for a <em>Perfect Stay</em></h2>
+      <div class="section-divider mx-auto"></div>
+    </div>
+    <div class="row g-4">
+      <div class="col-6 col-md-4 col-lg-2" data-aos="zoom-in" data-aos-delay="0">
+        <div class="amenity-card"><div class="amenity-icon"><i class="fa-solid fa-person-swimming"></i></div><div class="amenity-name">Swimming Pool</div></div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-2" data-aos="zoom-in" data-aos-delay="60">
+        <div class="amenity-card"><div class="amenity-icon"><i class="fa-solid fa-spa"></i></div><div class="amenity-name">Spa & Salon</div></div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-2" data-aos="zoom-in" data-aos-delay="120">
+        <div class="amenity-card"><div class="amenity-icon"><i class="fa-solid fa-dumbbell"></i></div><div class="amenity-name">Fitness Centre</div></div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-2" data-aos="zoom-in" data-aos-delay="180">
+        <div class="amenity-card"><div class="amenity-icon"><i class="fa-solid fa-utensils"></i></div><div class="amenity-name">Restaurant</div></div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-2" data-aos="zoom-in" data-aos-delay="240">
+        <div class="amenity-card"><div class="amenity-icon"><i class="fa-solid fa-wifi"></i></div><div class="amenity-name">Free Wi-Fi</div></div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-2" data-aos="zoom-in" data-aos-delay="300">
+        <div class="amenity-card"><div class="amenity-icon"><i class="fa-solid fa-square-parking"></i></div><div class="amenity-name">Free Parking</div></div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-2" data-aos="zoom-in" data-aos-delay="60">
+        <div class="amenity-card"><div class="amenity-icon"><i class="fa-solid fa-snowflake"></i></div><div class="amenity-name">Air Conditioning</div></div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-2" data-aos="zoom-in" data-aos-delay="120">
+        <div class="amenity-card"><div class="amenity-icon"><i class="fa-solid fa-bell-concierge"></i></div><div class="amenity-name">Room Service</div></div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-2" data-aos="zoom-in" data-aos-delay="180">
+        <div class="amenity-card"><div class="amenity-icon"><i class="fa-solid fa-mug-hot"></i></div><div class="amenity-name">Breakfast Included</div></div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-2" data-aos="zoom-in" data-aos-delay="240">
+        <div class="amenity-card"><div class="amenity-icon"><i class="fa-solid fa-shield-halved"></i></div><div class="amenity-name">24-Hr Security</div></div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-2" data-aos="zoom-in" data-aos-delay="300">
+        <div class="amenity-card"><div class="amenity-icon"><i class="fa-solid fa-people-group"></i></div><div class="amenity-name">Conference Centre</div></div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-2" data-aos="zoom-in" data-aos-delay="360">
+        <div class="amenity-card"><div class="amenity-icon"><i class="fa-solid fa-rings-wedding"></i></div><div class="amenity-name">Wedding Events</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONFERENCES -->
+<section id="conferences">
+  <div class="container position-relative">
+    <div class="row g-5 align-items-center">
+      <div class="col-lg-6" data-aos="fade-right">
+        <span class="section-eyebrow">Events & Meetings</span>
+        <h2 class="section-title" style="color:white;">Conferences & <em>Events</em></h2>
+        <div class="section-divider"></div>
+        <p style="color:#bbb;line-height:1.9;margin-bottom:30px;">
+          Urban Bliss Hotel Conference Centre offers over 11,290 sq ft of sophisticated conference and banquet facilities with four elegant venues — ideal for corporate meetings, seminars, product launches, and celebrations.
+        </p>
+        <div class="row g-3 mb-4">
+          <div class="col-6"><div class="conf-stat"><div class="conf-stat-num">550</div><div class="conf-stat-label">Max Capacity</div></div></div>
+          <div class="col-6"><div class="conf-stat"><div class="conf-stat-num">4</div><div class="conf-stat-label">Venue Spaces</div></div></div>
+          <div class="col-6"><div class="conf-stat"><div class="conf-stat-num">11,290</div><div class="conf-stat-label">Sq Ft Total Area</div></div></div>
+          <div class="col-6"><div class="conf-stat"><div class="conf-stat-num">AV</div><div class="conf-stat-label">Full A/V Setup</div></div></div>
+        </div>
+        <div class="mb-4">
+          <span class="event-tag">Corporate Meetings</span>
+          <span class="event-tag">Conferences</span>
+          <span class="event-tag">Workshops</span>
+          <span class="event-tag">Seminars</span>
+          <span class="event-tag">Weddings</span>
+          <span class="event-tag">Banquets</span>
+          <span class="event-tag">Product Launches</span>
+        </div>
+        <a href="#contact" class="btn-conf"><i class="fa-solid fa-paper-plane me-2"></i>Request a Quote</a>
+      </div>
+      <div class="col-lg-6" data-aos="fade-left">
+        <img src="https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?w=700&q=80" alt="Conference room" style="width:100%;height:420px;object-fit:cover;border:1px solid rgba(87,183,76,0.2);" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESTAURANT -->
+<section id="restaurant">
+  <div class="container">
+    <div class="row g-5 align-items-center">
+      <div class="col-lg-5" data-aos="fade-right">
+        <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&q=80" alt="Restaurant" style="width:100%;height:450px;object-fit:cover;" loading="lazy">
+      </div>
+      <div class="col-lg-7" data-aos="fade-left">
+        <span class="section-eyebrow">Dining</span>
+        <h2 class="section-title">Exceptional <em>Dining</em> Experience</h2>
+        <div class="section-divider"></div>
+        <p style="line-height:1.9;color:var(--text-mid);margin-bottom:30px;">
+          Enjoy local and international cuisine prepared by experienced chefs in a stylish dining environment. From fine dining to relaxed outdoor dining, our kitchen creates memorable meals at every hour.
+        </p>
+        <div class="row g-3 mb-4">
+          <div class="col-6">
+            <div class="menu-item-card">
+              <div class="menu-item-name">Chef's Table Nshima</div>
+              <div class="menu-item-desc">Traditional Zambian staple, slow-braised beef, seasonal greens</div>
+              <div class="menu-item-price">K 145</div>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="menu-item-card">
+              <div class="menu-item-name">Grilled Tilapia</div>
+              <div class="menu-item-desc">Fresh Lake Kariba tilapia, herb butter, roasted vegetables</div>
+              <div class="menu-item-price">K 185</div>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="menu-item-card">
+              <div class="menu-item-name">Continental Breakfast</div>
+              <div class="menu-item-desc">Full spread: pastries, eggs, fruit, cereals, hot beverages</div>
+              <div class="menu-item-price">K 95</div>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="menu-item-card">
+              <div class="menu-item-name">Tenderloin Steak</div>
+              <div class="menu-item-desc">250g prime cut, truffle sauce, garlic mash, grilled asparagus</div>
+              <div class="menu-item-price">K 285</div>
+            </div>
+          </div>
+        </div>
+        <div class="d-flex flex-wrap gap-3">
+          <a href="#contact" class="btn-primary-green"><i class="fa-solid fa-utensils me-2"></i>Reserve a Table</a>
+          <a href="#" class="btn-outline-white" style="border-color:var(--green);color:var(--green);">View Full Menu</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WELLNESS -->
+<section id="wellness">
+  <div class="container">
+    <div class="text-center mb-5" data-aos="fade-up">
+      <span class="section-eyebrow">Wellness</span>
+      <h2 class="section-title">Relax, Rejuvenate & <em>Refresh</em></h2>
+      <div class="section-divider mx-auto"></div>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="0">
+        <div class="wellness-card">
+          <div class="wellness-img"><img src="https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?w=600&q=80" alt="Spa" loading="lazy"></div>
+          <div class="wellness-body">
+            <div class="wellness-title"><i class="fa-solid fa-spa" style="color:var(--green);margin-right:10px;"></i>Spa & Salon</div>
+            <div class="wellness-item"><i class="fa-solid fa-check"></i> Massage Treatments</div>
+            <div class="wellness-item"><i class="fa-solid fa-check"></i> Beauty Treatments</div>
+            <div class="wellness-item"><i class="fa-solid fa-check"></i> Skin & Nail Care</div>
+            <div class="wellness-item"><i class="fa-solid fa-check"></i> Relaxation Therapies</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+        <div class="wellness-card">
+          <div class="wellness-img"><img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=600&q=80" alt="Gym" loading="lazy"></div>
+          <div class="wellness-body">
+            <div class="wellness-title"><i class="fa-solid fa-dumbbell" style="color:var(--green);margin-right:10px;"></i>Fitness Centre</div>
+            <div class="wellness-item"><i class="fa-solid fa-check"></i> Modern Equipment</div>
+            <div class="wellness-item"><i class="fa-solid fa-check"></i> Treadmills & Bikes</div>
+            <div class="wellness-item"><i class="fa-solid fa-check"></i> Weight Machines</div>
+            <div class="wellness-item"><i class="fa-solid fa-check"></i> 24/7 Access</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+        <div class="wellness-card">
+          <div class="wellness-img"><img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=600&q=80" alt="Pool" loading="lazy"></div>
+          <div class="wellness-body">
+            <div class="wellness-title"><i class="fa-solid fa-person-swimming" style="color:var(--green);margin-right:10px;"></i>Swimming Pool</div>
+            <div class="wellness-item"><i class="fa-solid fa-check"></i> Outdoor Pool</div>
+            <div class="wellness-item"><i class="fa-solid fa-check"></i> Family Friendly</div>
+            <div class="wellness-item"><i class="fa-solid fa-check"></i> Poolside Leisure Area</div>
+            <div class="wellness-item"><i class="fa-solid fa-check"></i> Towels Provided</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+  <div class="container">
+    <div class="row mb-5">
+      <div class="col-lg-6" data-aos="fade-right">
+        <span class="section-eyebrow">Guest Reviews</span>
+        <h2 class="section-title" style="color:white;">What Our <em>Guests</em> Say</h2>
+        <div class="section-divider"></div>
+      </div>
+      <div class="col-lg-6 d-flex align-items-center justify-content-lg-end" data-aos="fade-left">
+        <div class="rating-badge">
+          <div>
+            <div class="rating-num">4.3</div>
+            <div style="color:white;font-size:0.75rem;opacity:0.8;">out of 5.0</div>
+          </div>
+          <div class="rating-info">
+            <div style="color:#f4c430;font-size:0.9rem;margin-bottom:2px;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <div>822+ Google Reviews</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="0">
+        <div class="testi-card">
+          <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <div class="testi-text">"What a nice and relaxing space. We loved the modern features and the calm lighting."</div>
+          <div class="testi-author">— Google Reviewer</div>
+        </div>
+      </div>
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+        <div class="testi-card">
+          <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <div class="testi-text">"The customer service is excellent, environment is neat, clean, comfortable and the food is amazing."</div>
+          <div class="testi-author">— Google Reviewer</div>
+        </div>
+      </div>
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+        <div class="testi-card">
+          <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <div class="testi-text">"Lovely place. Great staff. Great service and great food. Would absolutely recommend!"</div>
+          <div class="testi-author">— Google Reviewer</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery">
+  <div class="container">
+    <div class="text-center mb-5" data-aos="fade-up">
+      <span class="section-eyebrow">Visual Tour</span>
+      <h2 class="section-title">Explore <em>Urban Bliss</em></h2>
+      <div class="section-divider mx-auto"></div>
+    </div>
+    <div class="gallery-filter justify-content-center mb-4" data-aos="fade-up">
+      <button class="filter-btn active">All</button>
+      <button class="filter-btn">Rooms</button>
+      <button class="filter-btn">Restaurant</button>
+      <button class="filter-btn">Pool</button>
+      <button class="filter-btn">Conferences</button>
+      <button class="filter-btn">Events</button>
+    </div>
+    <div class="gallery-grid" data-aos="fade-up">
+      <div class="gallery-item" onclick="openLightbox(this)">
+        <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=800&q=80" alt="Hotel Exterior" loading="lazy">
+        <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(this)">
+        <img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=500&q=80" alt="Guest Room" loading="lazy">
+        <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(this)">
+        <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=500&q=80" alt="Restaurant" loading="lazy">
+        <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(this)">
+        <img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=500&q=80" alt="Swimming Pool" loading="lazy">
+        <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(this)">
+        <img src="https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?w=700&q=80" alt="Conference" loading="lazy">
+        <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(this)">
+        <img src="https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?w=500&q=80" alt="Spa" loading="lazy">
+        <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(this)">
+        <img src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=500&q=80" alt="Events" loading="lazy">
+        <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LOCATION -->
+<section id="location">
+  <div class="container">
+    <div class="text-center mb-5" data-aos="fade-up">
+      <span class="section-eyebrow">Location</span>
+      <h2 class="section-title">Find <em>Us</em></h2>
+      <div class="section-divider mx-auto"></div>
+    </div>
+    <div class="row g-4">
+      <div class="col-lg-8" data-aos="fade-right">
+        <div class="map-placeholder">
+          <i class="fa-solid fa-location-dot"></i>
+          <div style="font-size:1.3rem;font-weight:300;">Urban Bliss Hotel</div>
+          <div style="font-size:0.9rem;color:#666;">Luangwa Avenue, Kabwe, Zambia</div>
+          <a href="https://maps.google.com/?q=Kabwe+Zambia" target="_blank" class="btn-primary-green mt-3" style="font-size:0.7rem;">
+            <i class="fa-solid fa-diamond-turn-right me-2"></i>Get Directions
+          </a>
+        </div>
+      </div>
+      <div class="col-lg-4" data-aos="fade-left">
+        <div class="location-card">
+          <div class="section-eyebrow">Address</div>
+          <p style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;margin-bottom:24px;">
+            Luangwa Avenue, Kabwe, Zambia
+          </p>
+          <hr>
+          <div class="section-eyebrow mt-4">Nearby Attractions</div>
+          <div class="nearby-item">
+            <i class="fa-solid fa-tree"></i>
+            <span style="font-size:0.88rem;">Big Tree National Monument</span>
+            <span class="nearby-dist">2 km</span>
+          </div>
+          <div class="nearby-item">
+            <i class="fa-solid fa-golf-ball-tee"></i>
+            <span style="font-size:0.88rem;">Kabwe Golf Club</span>
+            <span class="nearby-dist">3 km</span>
+          </div>
+          <div class="nearby-item">
+            <i class="fa-solid fa-train"></i>
+            <span style="font-size:0.88rem;">Kabwe Railway Station</span>
+            <span class="nearby-dist">3 km</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <div class="text-center mb-5" data-aos="fade-up">
+      <span class="section-eyebrow">Contact Us</span>
+      <h2 class="section-title">Get in <em>Touch</em></h2>
+      <div class="section-divider mx-auto"></div>
+    </div>
+    <div class="row g-5">
+      <div class="col-lg-4" data-aos="fade-right">
+        <div class="contact-info-item">
+          <div class="contact-icon"><i class="fa-solid fa-phone"></i></div>
+          <div>
+            <span class="contact-label">Phone</span>
+            <a href="tel:+260974041414" class="contact-value d-block text-decoration-none text-dark">+260 974 041 414</a>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
+          <div>
+            <span class="contact-label">Email</span>
+            <a href="mailto:info@urbanblisshotel.com" class="contact-value d-block text-decoration-none text-dark">info@urbanblisshotel.com</a>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <div class="contact-icon"><i class="fa-solid fa-location-dot"></i></div>
+          <div>
+            <span class="contact-label">Address</span>
+            <span class="contact-value">Luangwa Avenue, Kabwe, Zambia</span>
+          </div>
+        </div>
+        <a href="https://wa.me/260974041414" target="_blank" class="btn-primary-green d-inline-flex align-items-center gap-2 mt-2">
+          <i class="fab fa-whatsapp" style="font-size:1.1rem;"></i> Chat on WhatsApp
+        </a>
+      </div>
+      <div class="col-lg-8" data-aos="fade-left">
+        <div class="contact-form">
+          <div class="row g-3">
+            <div class="col-md-6">
+              <input type="text" class="form-control" placeholder="Your Name">
+            </div>
+            <div class="col-md-6">
+              <input type="email" class="form-control" placeholder="Email Address">
+            </div>
+            <div class="col-md-6">
+              <input type="tel" class="form-control" placeholder="Phone Number">
+            </div>
+            <div class="col-md-6">
+              <select class="form-control">
+                <option value="">Subject / Enquiry Type</option>
+                <option>Room Booking</option>
+                <option>Conference / Event</option>
+                <option>Restaurant Reservation</option>
+                <option>Spa Booking</option>
+                <option>Corporate Partnership</option>
+                <option>General Enquiry</option>
+              </select>
+            </div>
+            <div class="col-12">
+              <textarea class="form-control" rows="5" placeholder="Your Message"></textarea>
+            </div>
+            <div class="col-12">
+              <button class="btn-contact" onclick="handleContact()">
+                <i class="fa-solid fa-paper-plane me-2"></i>Send Message
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer id="footer">
+  <div class="container">
+    <div class="row g-5 mb-5">
+      <div class="col-lg-4">
+        <span class="footer-brand">Urban<span>Bliss</span> Hotel</span>
+        <p class="footer-about">An oasis of peace and tranquility in the heart of Kabwe, Zambia. Luxury accommodation, exceptional dining, wellness, and world-class hospitality since 2019.</p>
+        <div class="social-links">
+          <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://wa.me/260974041414" class="social-link" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+        </div>
+      </div>
+      <div class="col-6 col-lg-2">
+        <div class="footer-title">Quick Links</div>
+        <a href="#home" class="footer-link">Home</a>
+        <a href="#rooms" class="footer-link">Rooms & Suites</a>
+        <a href="#restaurant" class="footer-link">Restaurant</a>
+        <a href="#conferences" class="footer-link">Conferences</a>
+        <a href="#amenities" class="footer-link">Amenities</a>
+        <a href="#gallery" class="footer-link">Gallery</a>
+        <a href="#about" class="footer-link">About Us</a>
+      </div>
+      <div class="col-6 col-lg-3">
+        <div class="footer-title">Contact</div>
+        <div class="footer-contact-item"><i class="fa-solid fa-phone"></i><span>+260 974 041 414</span></div>
+        <div class="footer-contact-item"><i class="fa-solid fa-envelope"></i><span>info@urbanblisshotel.com</span></div>
+        <div class="footer-contact-item"><i class="fa-solid fa-location-dot"></i><span>Luangwa Avenue, Kabwe, Zambia</span></div>
+      </div>
+      <div class="col-lg-3">
+        <div class="footer-title">Newsletter</div>
+        <p style="font-size:0.82rem;margin-bottom:14px;">Subscribe for special offers and news.</p>
+        <div class="newsletter-input">
+          <input type="email" placeholder="Your email address">
+          <button><i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container">
+      &copy; 2025 Urban Bliss Hotel. All rights reserved. &bull; Luangwa Avenue, Kabwe, Zambia
+    </div>
+  </div>
+</footer>
+
+<!-- FLOATING WHATSAPP -->
+<a href="https://wa.me/260974041414" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+<!-- BACK TO TOP -->
+<button id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">
+  <i class="fa-solid fa-chevron-up"></i>
+</button>
+
+<!-- LIGHTBOX -->
+<div class="lightbox-overlay" id="lightbox">
+  <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+  <img class="lightbox-img" id="lightboxImg" src="" alt="">
+</div>
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+// AOS Init
+AOS.init({ duration: 700, once: true, offset: 60 });
+
+// Sticky nav
+window.addEventListener('scroll', () => {
+  const nav = document.getElementById('mainNav');
+  const back = document.getElementById('backTop');
+  if (window.scrollY > 80) {
+    nav.classList.add('scrolled');
+    back.classList.add('show');
+  } else {
+    nav.classList.remove('scrolled');
+    back.classList.remove('show');
+  }
+});
+
+// Smooth nav links
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const target = document.querySelector(a.getAttribute('href'));
+    if (target) {
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      // Close mobile menu
+      const menu = document.getElementById('navMenu');
+      if (menu.classList.contains('show')) {
+        document.querySelector('.navbar-toggler').click();
+      }
+    }
+  });
+});
+
+// Gallery filter
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+  });
+});
+
+// Lightbox
+function openLightbox(el) {
+  const img = el.querySelector('img');
+  document.getElementById('lightboxImg').src = img.src;
+  document.getElementById('lightbox').classList.add('active');
+}
+function closeLightbox() {
+  document.getElementById('lightbox').classList.remove('active');
+}
+document.getElementById('lightbox').addEventListener('click', function(e) {
+  if (e.target === this) closeLightbox();
+});
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+
+// Booking
+function handleBooking() {
+  const ci = document.getElementById('checkin').value;
+  const co = document.getElementById('checkout').value;
+  if (!ci || !co) {
+    alert('Please select check-in and check-out dates.');
+    return;
+  }
+  if (new Date(co) <= new Date(ci)) {
+    alert('Check-out must be after check-in.');
+    return;
+  }
+  alert('Thank you! We\'ll contact you shortly to confirm your booking.\n\nFor immediate assistance: +260 974 041 414');
+}
+
+// Contact
+function handleContact() {
+  alert('Thank you for your message! Our team will respond within 24 hours.\n\nFor urgent enquiries: +260 974 041 414');
+}
+
+// Set min date for booking
+const today = new Date().toISOString().split('T')[0];
+document.getElementById('checkin').min = today;
+document.getElementById('checkout').min = today;
+document.getElementById('checkin').addEventListener('change', function() {
+  document.getElementById('checkout').min = this.value;
+});
+</script>
+</body>
+</html>
